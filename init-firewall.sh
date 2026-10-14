@@ -62,6 +62,10 @@ while read -r cidr; do
 done < <(echo "$gh_ranges" | jq -r '(.web + .api + .git)[]' | aggregate -q)
 
 for domain in \
+    "api.github.com" \
+    "github.com" \
+    "codeload.github.com" \
+    "objects.githubusercontent.com" \
     "registry.npmjs.org" \
     "api.anthropic.com" \
     "claude.ai" \
